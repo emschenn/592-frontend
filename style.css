@@ -48,8 +48,14 @@ nav .navbar-nav .nav-item #topage2 {
 }
 @media screen and (max-width: 768px) {
   .page .choice-row .choice .img-container {
-    width: 200px;
-    height: 200px;
+    width: 220px;
+    height: 220px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .page .choice-row .choice .img-container {
+    width: 170px;
+    height: 170px;
   }
 }
 .page .choice-row .choice .img-container img {
