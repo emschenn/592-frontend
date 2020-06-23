@@ -1,0 +1,393 @@
+body {
+  font-family: "Noto Sans TC", sans-serif;
+  background-color: #f0eeec;
+}
+
+nav {
+  font-size: 1em;
+  font-weight: 700;
+}
+nav .navbar-brand img {
+  margin-top: 5px;
+  margin-left: 10px;
+}
+nav .navbar-toggler {
+  border-color: transparent;
+}
+nav .navbar-nav {
+  position: absolute;
+  right: 30px;
+}
+nav .navbar-nav .nav-item #topage2 {
+  margin-right: 1em;
+}
+
+.page {
+  height: 100vh;
+  width: 100vw;
+}
+.page .choice-row {
+  position: relative;
+  top: 18vh;
+}
+.page .choice-row .choice {
+  font-size: 30px;
+  font-weight: 900;
+  color: #6b6b6b;
+}
+@media screen and (max-width: 768px) {
+  .page .choice-row .choice {
+    height: 35vh;
+  }
+}
+.page .choice-row .choice .img-container {
+  margin: auto;
+  width: 300px;
+  height: 300px;
+  text-align: center;
+}
+@media screen and (max-width: 768px) {
+  .page .choice-row .choice .img-container {
+    width: 200px;
+    height: 200px;
+  }
+}
+.page .choice-row .choice .img-container img {
+  max-width: 100%;
+  max-height: 100%;
+}
+.page .choice-row .choice p {
+  text-align: center;
+}
+.page .choice-row .choice p:hover {
+  text-align: center;
+  color: #eb914c;
+}
+.page .form {
+  position: relative;
+  top: 15vh;
+  width: 70vw;
+  height: 75vh;
+  margin: auto;
+  white-space: nowrap;
+  flex-flow: row wrap;
+}
+.page .form select {
+  width: 8em;
+  margin-right: 1em;
+}
+.page .form label {
+  margin-right: 1em;
+}
+.page .form .condition {
+  display: inline-block;
+  margin-bottom: 0.8em;
+}
+.page .form input[type=number] {
+  width: 6em;
+}
+.page .form input[type=text] {
+  width: 100%;
+}
+.page .form .slider-range {
+  margin: 1em 0 1em 0;
+}
+.page .form .col-2 {
+  font-weight: 700;
+  text-align: center;
+}
+.page .form .col-10 {
+  white-space: normal;
+}
+.page .form button[type=submit] {
+  border-radius: 30px;
+  position: absolute;
+  bottom: 2vh;
+  height: 2.2em;
+  width: 130px;
+  left: 50%;
+  margin-left: -65px;
+  color: white;
+  border: transparent;
+}
+.page .form button[type=submit]:hover {
+  background-color: white;
+  color: #eb914c;
+}
+
+.page:nth-of-type(1) {
+  background-color: white;
+}
+
+.page:nth-of-type(2) {
+  background-image: url("src/bg2.jpg");
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.page:nth-of-type(3),
+.mypage {
+  background-color: #f0eeec;
+  height: 100%;
+}
+.page:nth-of-type(3) .result,
+.mypage .result {
+  position: relative;
+  top: 15vh;
+  width: 70vw;
+  margin: auto;
+  white-space: nowrap;
+  flex-flow: row wrap;
+}
+.page:nth-of-type(3) .result .col-lg-4 .img-container,
+.mypage .result .col-lg-4 .img-container {
+  width: 250px;
+  height: 150px;
+  margin: auto;
+}
+.page:nth-of-type(3) .result .col-lg-4 .img-container img,
+.mypage .result .col-lg-4 .img-container img {
+  width: 100%;
+  /* or any custom size */
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 18px;
+  box-shadow: 2px 2px 18px -8px rgba(0, 0, 0, 0.3);
+}
+.page:nth-of-type(3) .result .my-row,
+.mypage .result .my-row {
+  height: 15vh;
+}
+.page:nth-of-type(3) .result .my-row .col,
+.mypage .result .my-row .col {
+  font-weight: 700;
+}
+.page:nth-of-type(3) .result .my-row .col .user,
+.mypage .result .my-row .col .user {
+  font-weight: 400;
+}
+.page:nth-of-type(3) .result .result-row,
+.mypage .result .result-row {
+  margin-bottom: 4em;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-right: 20px;
+}
+.page:nth-of-type(3) .result .result-row .col-lg-8,
+.mypage .result .result-row .col-lg-8 {
+  position: relative;
+}
+.page:nth-of-type(3) .result .result-row .col-lg-8 .fa-heart,
+.mypage .result .result-row .col-lg-8 .fa-heart {
+  z-index: 3;
+  position: absolute;
+  top: 0px;
+  right: 3px;
+  font-size: 25px;
+}
+.page:nth-of-type(3) .result .result-row .col-lg-8 .fas,
+.mypage .result .result-row .col-lg-8 .fas {
+  color: #eb914c;
+}
+.page:nth-of-type(3) .result .result-row--item,
+.mypage .result .result-row--item {
+  margin-top: 0.3em;
+  overflow: hidden;
+  height: 8em;
+}
+.page:nth-of-type(3) .result .result-row--item .col,
+.mypage .result .result-row--item .col {
+  margin-top: 0.5em;
+  white-space: normal;
+}
+.page:nth-of-type(3) .result .result-row:hover,
+.mypage .result .result-row:hover {
+  box-shadow: 2px 2px 18px -8px rgba(0, 0, 0, 0.2);
+}
+
+.mypage {
+  background-color: white;
+  height: 100%;
+}
+
+.loginpage {
+  background-color: white;
+  height: 100vh;
+  width: 100%;
+}
+.loginpage .container {
+  position: relative;
+  top: 25vh;
+  margin: auto;
+  height: 50vh;
+}
+.loginpage .container .head {
+  color: #cccccc;
+}
+.loginpage .container .head--item {
+  padding-top: 0.8em;
+  padding-bottom: 0.5em;
+  text-align: center;
+  font-weight: 700;
+}
+.loginpage .container .head--item:hover {
+  color: black;
+  border-bottom: #eb914c 3px solid;
+}
+.loginpage .container .form {
+  position: relative;
+  margin: auto;
+}
+.loginpage .container .form .form-row {
+  font-weight: 700;
+  position: relative;
+  margin: auto;
+  margin-bottom: 2em;
+  width: 20em;
+}
+.loginpage .container .form .form-row input {
+  font-weight: 400;
+  width: 15em;
+}
+.loginpage .container #login-form {
+  top: 10vh;
+  height: 40vh;
+}
+.loginpage .container #reg-form {
+  top: 7vh;
+  height: 45vh;
+}
+.loginpage .container #reg-form .form-row {
+  margin-bottom: 1.5em;
+}
+
+.hint {
+  width: 100%;
+  color: #535353;
+  text-align: center;
+  font-weight: 400;
+  font-size: 0.75em;
+  margin-top: -2em;
+  margin-bottom: 2em;
+}
+
+.choose {
+  color: black;
+  border-bottom: #eb914c 3px solid;
+}
+
+#reg-modal .modal-header {
+  position: relative;
+}
+#reg-modal .modal-header h5 {
+  font-weight: 700;
+}
+#reg-modal .modal-header button {
+  background-color: transparent;
+  color: #a3a3a3;
+  display: float;
+  top: 13px;
+  width: 60%;
+  text-align: right;
+  box-shadow: none;
+}
+#reg-modal .modal-header button:hover {
+  color: black;
+}
+#reg-modal .modal-body {
+  height: 120px;
+}
+#reg-modal .modal-body button {
+  background-color: transparent;
+  color: #eb914c;
+  border: 2px solid #eb914c;
+  top: 60px;
+}
+#reg-modal .modal-body button:hover {
+  background-color: #eb914c;
+  color: white;
+}
+
+button {
+  font-weight: 700;
+  border-radius: 30px;
+  position: absolute;
+  bottom: 2vh;
+  height: 2.2em;
+  width: 130px;
+  left: 50%;
+  margin-left: -65px;
+  color: white;
+  border: transparent;
+  box-shadow: 2px 2px 18px -8px rgba(0, 0, 0, 0.3);
+}
+button:hover {
+  background-color: white;
+  color: #eb914c;
+}
+
+@media (max-width: 767px) {
+  .page .choice {
+    height: 48vh;
+  }
+  .page .choice--square {
+    width: 10em;
+    height: 10em;
+  }
+  .page .form {
+    width: 90vw;
+  }
+  .page .form .region--more {
+    width: 75vw;
+    margin-left: -2em;
+  }
+
+  .page:nth-of-type(3) .result .result-row .col-md-5 {
+    margin-bottom: 1em;
+  }
+  .page:nth-of-type(3) .result .result-row .col-md-7 .fa-heart {
+    z-index: 3;
+    top: 0.4em;
+    right: 0.5em;
+  }
+  .page:nth-of-type(3) .result .result-row--item .col-10 {
+    margin-left: 0em;
+  }
+}
+.bg-darko {
+  background-color: #eb914c;
+}
+
+.orange {
+  color: #eb914c;
+}
+
+.gray {
+  color: #f0eeec;
+}
+
+.white {
+  color: white;
+}
+
+.bg-lighto {
+  background-color: #f0eeec;
+}
+
+.ui-slider-range {
+  background-color: #eb914c;
+}
+
+.hidden {
+  display: none;
+}
+
+.tooltip {
+  font-family: "Noto Sans TC", sans-serif;
+  background-color: #f0eeec;
+}
+
+/*# sourceMappingURL=style.css.map */

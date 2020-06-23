@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC:300,400,700,900&display=swap" rel="stylesheet">
+
+    <title>592 rental</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="jquery-ui-1.12.1.custom/jquery-ui.css">
+    <script src="jquery-ui-1.12.1.custom/jquery-ui.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm navbar-light   fixed-top">
+        <a class="navbar-brand" href="#" onclick="changePage(0)">
+            <img src="src/logo3.png" width="150" height="22" class="d-inline-block align-top" alt="">
+        </a>
+        <div class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" id="topage1" href="#" onclick="changePage(1)">註冊/登入</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link hidden" id="topage2" href="#" onclick="changePage(2)">我的收藏</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link hidden" id="logout" href="#">登出</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="page ">
+        <div class="container">
+            <div class="row choice-row">
+                <div class=" col-md-1 "></div>
+                <div id="rent" class=" choice col-md-5">
+                    <div class="img-container">
+                        <img src="src/rent.png">
+
+                    </div>
+                    <p>我要租屋</p>
+
+                </div>
+                <div id="sell" class="choice col-md-5">
+                    <div class="img-container">
+                        <img src="src/sell.png">
+
+                    </div>
+                    <p>我要出租</p>
+                </div>
+                <div class=" col-md-1  "></div>
+            </div>
+        </div>
+    </div>
+    <div class="page bg-lighto hidden">
+        <div class="container-sm">
+            <div id="rent-form" class="form  ">
+                <!--form action="post"-->
+                <div class="row form-row ">
+                    <div class="col-2 ">地區</div>
+                    <div class="col-10">
+                        <span class="region condition">
+                                <select class="custom-select custom-select-sm">
+                                    <option value="null" selected>縣市</option>
+                                    <option value="台南" >台南</option>
+                                </select>
+                            </span>
+                    </div>
+                </div>
+                <div class="row form-row  ">
+                    <div class="col-2  "></div>
+                    <div class="col-10 text-break  ">
+                        <span class="region--more condition ">
+                                
+                            </span> </div>
+                </div>
+                <div class="row form-row ">
+                    <div class="col-2">格局</div>
+                    <div class="col-10">
+                        <span class=" cat condition">
+                                    <select class=" custom-select custom-select-sm">
+                                        <option selected>房數</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5 and more</option>
+                                    </select>
+                                    <span class="cat--more">
+                                    </span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="row form-row ">
+                    <div class="col-2">預算</div>
+                    <div class="col-10">
+                        <span class=" money condition">
+                                <div class="form-row">
+                                    <div class="col">
+                                        <input type="number" class="form-control" id="money-from">
+                                    </div>元
+                                    <div class="col">- </div>
+                                    <div class="col">
+                                        <input type="number" class=" form-control" id="money-to">
+                                    </div>元
+                                </div>
+                                <div class="slider-range"></div>
+                            </span>
+                    </div>
+                </div>
+
+                <div class="row form-row ">
+                    <div class="col-2">其他</div>
+                    <div class="col-10 text-break">
+                        <span class="other condition">
+                            <div class="form-check form-check-inline"> 
+                                <input class="form-check-input" type="checkbox" name="other" id="rent-otheropt" value="option1"> 
+                                <input type="text" class=" form-control" id="rent-otheropt-input" placeholder="e.g 有窗 非頂加 包水電 ...">
+                            </div><br>
+        
+                        </span>
+                    </div>
+                </div>
+                <br>
+                <button class="search-submit bg-darko" type="submit">開始搜尋</button>
+                <!--/form-->
+            </div>
+            <div id="sell-form" class="form  hidden">
+                <!--form action="post"-->
+                <div class="row form-row ">
+                    <div class="col-2">地區</div>
+                    <div class="col-10">
+                        <span class="region condition">
+                                <select class="custom-select custom-select-sm">
+                                    <option value="null" selected>縣市</option>
+                                    <option value="台南">台南</option>
+                                </select>
+                            </span>
+                    </div>
+                </div>
+                <div class="row form-row  ">
+                    <div class="col-2 "></div>
+                    <div class="col-10  text-break">
+                        <span class="region--more condition">
+                                
+                            </span> </div>
+                </div>
+                <div class="row form-row ">
+                    <div class="col-2">格局</div>
+                    <div class="col-10">
+                        <span class=" cat condition">
+                                    <select class=" custom-select custom-select-sm">
+                                        <option selected>房數</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5 and more</option>
+                                    </select>
+                                    <span class="cat--more">
+                                    </span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="row form-row ">
+                    <div class="col-2">價格</div>
+                    <div class="col-10">
+                        <span class=" money condition">
+                                <div class="form-row">
+                                    <div class="col">
+                                        <input type="number" class="form-control" id="money">
+                                    </div>元
+                                    
+                                </div>
+                            </span>
+                    </div>
+                </div>
+
+                <div class="row form-row ">
+                    <div class="col-2">其他</div>
+                    <div class="col-10 text-break">
+                        <span class="other condition">
+                            <div class="form-check form-check-inline"> 
+                                <input class="form-check-input " type="checkbox" id="sell-otheropt" name="other" value="option1"> 
+                                <input type="text" class=" form-control" id="sell-otheropt-input" placeholder="e.g 有窗 非頂加 包水電 ...">
+                            </div><br>
+        
+                        </span>
+                    </div>
+                </div>
+                <br>
+                <button class="search-submit bg-darko" type="submit">開始搜尋</button>
+                <!--/form-->
+            </div>
+        </div>
+    </div>
+    <div class="page bg-lighto hidden">
+        <div class="container">
+            <div class="result ">
+                <!--div class="row result-row ">
+                    <url class="hidden">https://google.com</url>
+                    <div class="col-lg-4">
+                        <div class="img-container">
+                            <img src="https://fakeimg.pl/150x250/"> </div>
+
+                    </div>
+                    <div class="col-lg-8 ">
+                        <i class="far white fa-heart" data-toggle="tooltip" data-placement="right" title="欲收藏請先登入 "></i>
+                        <div class="row result-row--item ">
+                            <div id="r-other " class="col">
+                                am ut consectetur obcaecati, est alias aliquid accusantium! </div>
+                        </div>
+                    </div>
+                </div-->
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <!--login page-->
+    <div class="loginpage hidden">
+        <div class="container">
+            <div class="row head">
+                <div class="col-3"></div>
+
+                <div class="col-2 head--item" id="reg">註冊</div>
+                <div class="col-2"></div>
+                <div class="col-2 head--item" id="login">登入</div>
+                <div class="col-3"></div>
+
+            </div>
+            <div id="reg-form" class="form hidden">
+                <div class="row form-row">
+                    <div class="col-2 ">信箱</div>
+                    <div class="col-10">
+                        <input type="text" class="form-control " id="reg-email">
+                    </div>
+                </div>
+                <div class="row form-row">
+                    <div class="col-2 ">帳號</div>
+                    <div class="col-10">
+                        <input type="text" class="form-control " id="reg-user">
+                    </div>
+                </div>
+
+                <div class="row form-row">
+                    <div class="col-2 ">密碼</div>
+                    <div class="col-10 ">
+                        <input type="password" class="form-control " id="reg-pwd">
+                    </div>
+                </div>
+                <div class="row ">
+                    <div class="hint"> * 請輸入4位以上英/數組合 </div>
+                </div>
+                <button id="reg-submit" type="submit" class="bg-darko">註冊</button>
+                <div class="modal fade" id="reg-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">註冊成功！</h5>
+                                <button type="button" data-dismiss="modal"><i class="fas fa-times"></i></button>
+                            </div>
+                            <div class="modal-body">
+                                <p>你現在可以享有收藏功能</p>
+                                <button type="button" data-dismiss="modal">馬上登入</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="login-form" class="form hidden">
+                <div class="row form-row">
+                    <div class="col-2 ">帳號</div>
+                    <div class="col-10">
+                        <input type="text" class="form-control " id="login-user">
+                    </div>
+                </div>
+
+                <div class="row form-row">
+                    <div class="col-2 ">密碼</div>
+                    <div class="col-10 ">
+                        <input type="password" class="form-control" id="login-pwd">
+                    </div>
+                </div>
+
+                <button id="login-submit" type="submit" class="bg-darko">登入</button>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="mypage hidden ">
+        <div class="container">
+            <div class="result ">
+                <!--div class="row result-row ">
+                    <div class="col-lg-4">
+                        <img src="https://fakeimg.pl/250x150/"> </div>
+                    <div class="col-lg-8 ">
+                        <id class="hidden">12e</id>
+                        <i href="#" class="fas white fa-heart" data-toggle="tooltip" data-placement="right" title="移除收藏 "></i>
+                        <div class="row result-row--item ">
+                            <div id="r-other " class="col">Loremem natus quo distinctio nulla harum? </div>
+                        </div>
+                    </div>
+                </div-->
+
+            </div>
+        </div>
+    </div>
+    <script src="app.js " type="text/javascript "></script>
+    <script src="faker.min.js" type="text/javascript"></script>
+
+</body>
+
+</html>
